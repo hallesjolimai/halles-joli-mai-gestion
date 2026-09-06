@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gestion Les Halles Joli Mai</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">HJM</span>
+      <div class="brand-text">
+        <strong>Les Halles Joli Mai</strong>
+        <span>Portail de gestion independant</span>
+      </div>
+    </div>
+    <div id="connexion-etat" class="etat-badge">Verification...</div>
+  </header>
+
+  <main>
+    <section class="carte-intro">
+      <h1>Factures fournisseurs</h1>
+      <p>Recuperation automatique depuis votre boite Gmail, sans intelligence artificielle : uniquement des regles (piece jointe PDF + mots-cles facture). Chaque facture est rangee dans un dossier dedie de votre Google Drive.</p>
+    </section>
+
+    <section id="zone-connexion" class="carte alerte hidden">
+      <h2>Connexion a Gmail requise</h2>
+      <p>Pour telecharger vos factures automatiquement, autorisez l'acces en lecture seule a votre boite Gmail ainsi que la creation de fichiers dans votre Google Drive (dossier dedie uniquement).</p>
+      <a href="/auth/google" class="bouton">Connecter mon compte Gmail</a>
+    </section>
+
+    <section class="grille-stats">
+      <div class="stat-carte">
+        <span class="stat-label">Factures recuperees</span>
+        <span id="stat-total" class="stat-valeur">–</span>
+      </div>
+      <div class="stat-carte">
+        <span class="stat-label">Sur les 30 derniers jours</span>
+        <span id="stat-30j" class="stat-valeur">–</span>
+      </div>
+      <div class="stat-carte">
+        <span class="stat-label">Derniere synchronisation</span>
+        <span id="stat-sync" class="stat-valeur stat-valeur-petit">–</span>
+      </div>
+    </section>
+
+    <section class="carte">
+      <div class="carte-header">
+        <h2>Liste des factures</h2>
+        <button id="btn-sync" class="bouton bouton-secondaire">Synchroniser maintenant</button>
+      </div>
+      <div id="message-sync" class="message hidden"></div>
+      <table class="table-factures">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Expediteur</th>
+            <th>Objet</th>
+            <th>Fichier</th>
+          </tr>
+        </thead>
+        <tbody id="corps-factures">
+          <tr><td colspan="4" class="vide">Aucune facture pour le moment.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
