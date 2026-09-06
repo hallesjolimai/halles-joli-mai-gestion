@@ -1,0 +1,15 @@
+{
+  "name": "halles-joli-mai-gestion",
+  "version": "1.0.0",
+  "description": "Portail de gestion independant - Les Halles Joli Mai (recuperation de factures Gmail sans IA)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "googleapis": "^140.0.1",
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3"
+  }
+}
